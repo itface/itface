@@ -170,6 +170,9 @@ function createModelTree(){
 		var node = $('#modelTree').tree('getSelected');
 		if(node){
 			$('#modelTree').tree('reload',node.target);
+		}else{
+			$('#modelTree').empty();
+			createModelTree();
 		}
 	}
 	function editAndDelReloadTree(){

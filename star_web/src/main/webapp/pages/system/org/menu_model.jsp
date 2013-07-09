@@ -20,7 +20,7 @@
 	模块名称：<form:input path="model.modelName"/><form:errors path="password" />
 	</div>
 	<div >
-	显示顺序：<form:input path="model.displayOrder"/>
+	显示顺序：<form:select  path="model.displayOrder" items="${list}"/>
 	</div>
 	<form:hidden path="model.id"/>
 	<form:hidden path="model.parentModel"/>
@@ -62,7 +62,7 @@ function reload(type){
 function submit(){
 	var id = $('#id').val();
 	var _method='POST';
-	if(id){
+	if(id>0){
 		_method='PUT';
 	}else{
 		id=0;
